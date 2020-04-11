@@ -7,8 +7,61 @@
 
 /*Driver input output functions*/
 #include <xc.h>
+#include "DIO.h"
+
+//set specific pin direction as output or input
+void PINAas(int pinNum,int dir){ 
+    switch(dir){
+        case IN: DDRA &= ~(1 << pinNum);break;
+        case OUT: DDRA |= (1 << pinNum);break;      
+    }
+}
+void PINBas(int pinNum,int dir){
+    switch(dir){
+        case IN: DDRB &= ~(1 << pinNum);break;
+        case OUT: DDRB |= (1 << pinNum);break;      
+    }
+}
+void PINCas(int pinNum,int dir){
+    switch(dir){
+        case IN: DDRC &= ~(1 << pinNum);break;
+        case OUT: DDRC |= (1 << pinNum);break;      
+    }
+}
+void PINDas(int pinNum,int dir){
+    switch(dir){
+        case IN: DDRD &= ~(1 << pinNum);break;
+        case OUT: DDRD |= (1 << pinNum);break;      
+    }
+}
 
 
+//direction OUT ,IN
+void PORTAas(int dir){//set Data Direction Register(input or output)
+    switch(dir){
+        case IN: DDRA=0x00;break;
+        case OUT: DDRA=0xFF;break;      
+    }
+}
+void PORTBas(int dir){
+    switch(dir){
+        case IN: DDRB=0x00;break;
+        case OUT: DDRB=0xFF;break;     
+    }
+    
+}
+void PORTCas(int dir){
+    switch(dir){
+        case IN: DDRC=0x00;break;
+        case OUT: DDRC=0xFF;break;     
+    }
+}
+void PORTDas(int dir){
+    switch(dir){
+        case IN: DDRD=0x00;break;
+        case OUT: DDRD=0xFF;break;     
+    }
+}
 void setPORT(char port) {//set o/p port pins to HIGH 
     switch (port) {
 

@@ -28,22 +28,36 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef XC_HEADER_TEMPLATE_H
-#define	XC_HEADER_TEMPLATE_H
+#ifndef DIO
+#define	DIO
 
+#define OUT 1
+#define IN 0
 
+//direction OUT ,IN
+void PORTAas(int dir);
+void PORTBas(int dir);
+void PORTCas(int dir);
+void PORTDas(int dir);
 
+//set specific pin direction as output or input
+void PINAas(int pinNum,int dir);
+void PINBas(int pinNum,int dir);
+void PINCas(int pinNum,int dir);
+void PINDas(int pinNum,int dir);
 
+//Returns status of input pin
 int isPressedA(int pinNum);
 int isPressedB(int pinNum);
 int isPressedC(int pinNum);
 int isPressedD(int pinNum);
 
 void setPIN(int pinNum, char port);
-
 void resetPIN(int pinNum, char port);
 
-
+//set output port to HIGH or reset to LOW
+void setPORT(char port);
+void resetPORT(char port);
 
 /*void setPINA(int pinNum);
 void setPINB(int pinNum);

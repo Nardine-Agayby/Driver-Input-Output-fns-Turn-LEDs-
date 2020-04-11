@@ -13,7 +13,11 @@ Discarded input sections
  .text          0x00000000        0x0 build/default/production/DIO.o
  .data          0x00000000        0x0 build/default/production/DIO.o
  .bss           0x00000000        0x0 build/default/production/DIO.o
- .text.setPORT  0x00000000       0x2e build/default/production/DIO.o
+ .text.PINAas   0x00000000       0x44 build/default/production/DIO.o
+ .text.PINCas   0x00000000       0x44 build/default/production/DIO.o
+ .text.PORTAas  0x00000000       0x14 build/default/production/DIO.o
+ .text.PORTBas  0x00000000       0x14 build/default/production/DIO.o
+ .text.PORTDas  0x00000000       0x14 build/default/production/DIO.o
  .text.resetPORT
                 0x00000000       0x26 build/default/production/DIO.o
  .text.isPressedA
@@ -324,38 +328,38 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0x78
+.debug_aranges  0x00000000       0xb8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 build/default/production/main.o
  .debug_aranges
-                0x00000020       0x58 build/default/production/DIO.o
+                0x00000020       0x98 build/default/production/DIO.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xbf4
+.debug_info     0x00000000      0xe80
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/ATmega_DFP/2.1.87/gcc/dev/atmega32a/avr5/memx-const/crtatmega32a.o
- .debug_info    0x000004e6      0x35c build/default/production/main.o
- .debug_info    0x00000842      0x3b2 build/default/production/DIO.o
+ .debug_info    0x000004e6      0x450 build/default/production/main.o
+ .debug_info    0x00000936      0x54a build/default/production/DIO.o
 
-.debug_abbrev   0x00000000      0x5e1
+.debug_abbrev   0x00000000      0x5d4
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/ATmega_DFP/2.1.87/gcc/dev/atmega32a/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x000004a3       0x95 build/default/production/main.o
- .debug_abbrev  0x00000538       0xa9 build/default/production/DIO.o
+ .debug_abbrev  0x000004a3       0x88 build/default/production/main.o
+ .debug_abbrev  0x0000052b       0xa9 build/default/production/DIO.o
 
-.debug_line     0x00000000      0x3ce
+.debug_line     0x00000000      0x4a2
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x119 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/ATmega_DFP/2.1.87/gcc/dev/atmega32a/avr5/memx-const/crtatmega32a.o
- .debug_line    0x00000119       0xd8 build/default/production/main.o
- .debug_line    0x000001f1      0x1dd build/default/production/DIO.o
+ .debug_line    0x00000119       0x97 build/default/production/main.o
+ .debug_line    0x000001b0      0x2f2 build/default/production/DIO.o
 
-.debug_frame    0x00000000       0xb8
+.debug_frame    0x00000000      0x138
  *(.debug_frame)
  .debug_frame   0x00000000       0x24 build/default/production/main.o
- .debug_frame   0x00000024       0x94 build/default/production/DIO.o
+ .debug_frame   0x00000024      0x114 build/default/production/DIO.o
 
 .debug_str      0x00000000      0x1bc
  *(.debug_str)
@@ -363,9 +367,9 @@ END GROUP
  .debug_str     0x00000196       0x1f build/default/production/main.o
  .debug_str     0x000001b5        0x7 build/default/production/DIO.o
 
-.debug_loc      0x00000000      0x2dc
+.debug_loc      0x00000000      0x594
  *(.debug_loc)
- .debug_loc     0x00000000      0x2dc build/default/production/DIO.o
+ .debug_loc     0x00000000      0x594 build/default/production/DIO.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -385,10 +389,10 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x58
+.debug_ranges   0x00000000       0x98
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 build/default/production/main.o
- .debug_ranges  0x00000010       0x48 build/default/production/DIO.o
+ .debug_ranges  0x00000010       0x88 build/default/production/DIO.o
 
 .debug_macro
  *(.debug_macro)
@@ -401,51 +405,67 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x00000000       0x3c C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/ATmega_DFP/2.1.87/gcc/dev/atmega32a/avr5/memx-const/crtatmega32a.o
 
-.text.resetPIN  0x0000006c       0x86
+.text.main      0x0000006c       0xa6
+ .text.main     0x0000006c       0xa6 build/default/production/main.o
+                0x0000006c                main
+
+.text.resetPIN  0x00000112       0x86
  .text.resetPIN
-                0x0000006c       0x86 build/default/production/DIO.o
-                0x0000006c                resetPIN
+                0x00000112       0x86 build/default/production/DIO.o
+                0x00000112                resetPIN
 
-.text.setPIN    0x000000f2       0x7e
- .text.setPIN   0x000000f2       0x7e build/default/production/DIO.o
-                0x000000f2                setPIN
+.text.setPIN    0x00000198       0x7e
+ .text.setPIN   0x00000198       0x7e build/default/production/DIO.o
+                0x00000198                setPIN
 
-.text.main      0x00000170       0x74
- .text.main     0x00000170       0x74 build/default/production/main.o
-                0x00000170                main
+.text.PINBas    0x00000216       0x44
+ .text.PINBas   0x00000216       0x44 build/default/production/DIO.o
+                0x00000216                PINBas
+
+.text.PINDas    0x0000025a       0x44
+ .text.PINDas   0x0000025a       0x44 build/default/production/DIO.o
+                0x0000025a                PINDas
+
+.text.setPORT   0x0000029e       0x2e
+ .text.setPORT  0x0000029e       0x2e build/default/production/DIO.o
+                0x0000029e                setPORT
 
 .text.isPressedB
-                0x000001e4       0x18
+                0x000002cc       0x18
  .text.isPressedB
-                0x000001e4       0x18 build/default/production/DIO.o
-                0x000001e4                isPressedB
+                0x000002cc       0x18 build/default/production/DIO.o
+                0x000002cc                isPressedB
 
 .text.isPressedD
-                0x000001fc       0x18
+                0x000002e4       0x18
  .text.isPressedD
-                0x000001fc       0x18 build/default/production/DIO.o
-                0x000001fc                isPressedD
+                0x000002e4       0x18 build/default/production/DIO.o
+                0x000002e4                isPressedD
 
-.text           0x00000214        0x4
- .text          0x00000214        0x4 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/ATmega_DFP/2.1.87/gcc/dev/atmega32a/avr5/memx-const/crtatmega32a.o
-                0x00000214                __vector_1
-                0x00000214                __vector_12
-                0x00000214                __bad_interrupt
-                0x00000214                __vector_6
-                0x00000214                __vector_3
-                0x00000214                __vector_11
-                0x00000214                __vector_13
-                0x00000214                __vector_17
-                0x00000214                __vector_19
-                0x00000214                __vector_7
-                0x00000214                __vector_5
-                0x00000214                __vector_4
-                0x00000214                __vector_9
-                0x00000214                __vector_2
-                0x00000214                __vector_15
-                0x00000214                __vector_8
-                0x00000214                __vector_14
-                0x00000214                __vector_10
-                0x00000214                __vector_16
-                0x00000214                __vector_18
-                0x00000214                __vector_20
+.text.PORTCas   0x000002fc       0x14
+ .text.PORTCas  0x000002fc       0x14 build/default/production/DIO.o
+                0x000002fc                PORTCas
+
+.text           0x00000310        0x4
+ .text          0x00000310        0x4 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/ATmega_DFP/2.1.87/gcc/dev/atmega32a/avr5/memx-const/crtatmega32a.o
+                0x00000310                __vector_1
+                0x00000310                __vector_12
+                0x00000310                __bad_interrupt
+                0x00000310                __vector_6
+                0x00000310                __vector_3
+                0x00000310                __vector_11
+                0x00000310                __vector_13
+                0x00000310                __vector_17
+                0x00000310                __vector_19
+                0x00000310                __vector_7
+                0x00000310                __vector_5
+                0x00000310                __vector_4
+                0x00000310                __vector_9
+                0x00000310                __vector_2
+                0x00000310                __vector_15
+                0x00000310                __vector_8
+                0x00000310                __vector_14
+                0x00000310                __vector_10
+                0x00000310                __vector_16
+                0x00000310                __vector_18
+                0x00000310                __vector_20

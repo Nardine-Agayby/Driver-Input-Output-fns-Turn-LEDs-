@@ -24,17 +24,22 @@
 
 int main(void) {
     // Data Direction Register
-    DDRC = 0xFF; //PORTC set as O/P
-    DDRD |= (1 << LED2); //set as O/P PIN
-    DDRB &= ~(1 << BUTTON0); // INPUT PIN.
-    DDRB &= ~(1 << BUTTON1); // INPUT PIN.
-    DDRD &= ~(1 << BUTTON2); // INPUT PIN.
+   // DDRC = 0xFF; //PORTC set as O/P
+    PORTCas(OUT); //set portC as output
+   // DDRD |= (1 << LED2); //set as O/P PIN
+    PINDas(LED2,OUT);
+   // DDRB &= ~(1 << BUTTON0); // INPUT PIN.
+    PINBas(BUTTON0,IN);
+   // DDRB &= ~(1 << BUTTON1); // INPUT PIN.
+    PINBas(BUTTON1,IN);
+   // DDRD &= ~(1 << BUTTON2); // INPUT PIN.
+    PINDas(BUTTON2,IN);
 
    // PORTA = 0x00;
     //PORTC = 0x00;
 
     while (1) {
-      //  setPORT(portC);
+        setPORT(portC);
         // Loop until power OFF
         if (isPressedB(BUTTON0)) { //PINB & (1<<PIN_number)
             //True Condition
